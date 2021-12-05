@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "3c264b6f-4cb7-4acf-98d4-9e2784a1b1b8",
+		"name": "ApiSystem",
+		"description": "Aqui será demonstrada a api criada no padrão REST;",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Laboratory",
+			"item": [
+				{
+					"name": "get laboratories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories"
+							]
+						},
+						"description": "Busca todos os laboratórios na base."
+					},
+					"response": []
+				},
+				{
+					"name": "create laboratory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"laboratories\":[\n        {\n            \"name\":\"teste1\",\n            \"address\":\"rua Arco,33\"\n        },\n        {\n            \"name\":\"teste2\",\n            \"address\":\"rua Arco,35\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories"
+							]
+						},
+						"description": "Cria um registro de laboratório."
+					},
+					"response": []
+				},
+				{
+					"name": "update laboratory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ômicron\",\n    \"address\":\"rua Arco,35\",\n    \"status\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories/{{laboratory_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories",
+								"{{laboratory_id}}"
+							]
+						},
+						"description": "Atualiza um registro de laboratório pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "get laboratory by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null,
+						"description": "Busca um registro de laboratório pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "delete a laboratory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories/{{laboratory_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories",
+								"{{laboratory_id}}"
+							]
+						},
+						"description": "Exclui um registro de laboratório pelo id\n\nAqui é feito uma exclusão lógica no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "get labs by exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories?exam=hemograma",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories"
+							],
+							"query": [
+								{
+									"key": "exam",
+									"value": "hemograma"
+								}
+							]
+						},
+						"description": "Busca por exame válido, também ja passado na documentação.\n\nEndpoint que faz a busca por nome do exame e retorna todos os laboratorios associados a esse exame."
+					},
+					"response": []
+				},
+				{
+					"name": "get by attribute(s) Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null,
+						"description": "Busca por atributos válido, também ja passado na documentação.\n\nEstes são: name, address, status;"
+					},
+					"response": []
+				},
+				{
+					"name": "Associate lab and exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories/{{laboratory_id}}/exams/{{exam_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories",
+								"{{laboratory_id}}",
+								"exams",
+								"{{exam_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deassociate lab and exam Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/laboratories/{{laboratory_id}}/exams/{{exam_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"laboratories",
+								"{{laboratory_id}}",
+								"exams",
+								"{{exam_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Representa Laboratórios"
+		},
+		{
+			"name": "Exam",
+			"item": [
+				{
+					"name": "get exams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/exams",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"exams"
+							]
+						},
+						"description": "Busca todos os exames na base"
+					},
+					"response": []
+				},
+				{
+					"name": "create exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/exams",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"exams"
+							]
+						},
+						"description": "Cria um exame na base"
+					},
+					"response": []
+				},
+				{
+					"name": "update exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    //\"name\":\"Hemograma\",\n    //\"typo\":1,\n    \"status\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/exams/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"exams",
+								"1"
+							]
+						},
+						"description": "Atualiza um exame pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "get a exam by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null,
+						"description": "Busca um exame pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "get by attribute(s)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/{{api_v1}}/exams?name=hemograma",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{api_v1}}",
+								"exams"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "hemograma"
+								}
+							]
+						},
+						"description": "Busca por atributos válido, também ja passado na documentação.\n\nEstes são: name, typo, status;"
+					},
+					"response": []
+				},
+				{
+					"name": "delete an exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null,
+						"description": "Exclui um exame pelo id\n\nExclusão lógica no sistema"
+					},
+					"response": []
+				}
+			],
+			"description": "Representa a entidade Exame"
+		}
+	]
+}
