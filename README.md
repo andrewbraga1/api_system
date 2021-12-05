@@ -7,13 +7,13 @@ Things you may want to cover:
 *For this project we use MVC structure
 
 * Configuration
-    ruby '2.4.9'
-    gem 'rails', '~> 5.2.6'
+    -ruby '2.4.9'
+    -gem 'rails', '~> 5.2.6'
     Sqlite3 as the database for Active Record
-    gem 'rack-cors'
-    gem 'rack-attack'
-    gem 'shoulda', '~> 4.0'
-    gem 'discard', '~> 1.2'
+    -gem 'rack-cors'
+    -gem 'rack-attack'
+    -gem 'shoulda', '~> 4.0'
+    -gem 'discard', '~> 1.2'
 * Database creation
     rails db:create db:migrate
     rails db:create db:migrate, in case you want to drop db
