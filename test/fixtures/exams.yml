@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+hemograma:
+  name: Hemograma
+  typo: Analise clinica
+  status: true
+
+ressonancia:
+  name: Ressonância
+  typo: Imagem
+  status: true
+
+ultrasom:
+  name: Ultrasom
+  typo: Imagem
+  status: false
+

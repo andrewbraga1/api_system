@@ -1,0 +1,15 @@
+one:
+  exam: hemograma
+  laboratory: sartman
+
+two:
+  exam: hemograma
+  laboratory: omicron
+
+three:
+  exam: ressonancia
+  laboratory: falsean
+  
+four:
+  exam: ultrasom
+  laboratory: omicron

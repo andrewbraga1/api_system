@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+omicron:
+  name: Ômicron
+  address: Rua 3 de abril,100
+  status: true
+
+sartman:
+  name: Sartman
+  address: Avenida Central,60
+  status: true
+
+falsean:
+  name: Falsean
+  address: Avenida Faje,630
+  status: false
